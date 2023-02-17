@@ -1,6 +1,6 @@
-# Solucion a la prueba tecnica
+# Solución a la prueba técnica
 
-Dentro del solution se encuentran 3 projectos
+Dentro del solution se encuentran 3 proyectos
 
 1.Service: Dentro de esta librería se encuentran las tanto clases con sus respectivos atributos como el consumo de los servicios propuestos utilizando RestSharp y Newtonsoft para la deserialización de la respuesta. Cada método consulta un servicio distinto y retorna la data en forma de lista.
 
