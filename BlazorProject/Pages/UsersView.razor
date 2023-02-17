@@ -1,0 +1,62 @@
+﻿<!--C# Code-->
+@page "/UsersView"
+@using Service.Entities;
+@using BlazorProject.Services;
+@inject IConsultService _consultService;
+
+@code{
+    private IEnumerable<Users> usuarios = null!;
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        usuarios = await _consultService.getUsers();
+    }
+
+}
+
+<!--end-->
+
+
+<!--HTML -->
+
+<h3>Users</h3>
+@if(usuarios == null){
+    <h4>Loading</h4>
+}
+else
+{
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in usuarios)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.username</td>
+                    <td>@item.email </td>
+                    <td>@item.address.city </td>
+                    <td>@item.phone </td>
+                    <td>@item.website </td>
+                    <td>@item.company.name </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<!--End HTML-->
+
+@code {
+
+}

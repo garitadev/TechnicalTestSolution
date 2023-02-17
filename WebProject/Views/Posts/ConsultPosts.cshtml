@@ -1,0 +1,60 @@
+﻿
+@{
+    List<Service.Entities.Posts> listaPosts = ViewBag.listaPosts;
+    @model Service.Entities.Posts
+
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Comentarios</h6>
+    </div>
+    <div class="card-body">
+       <div class="row">
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- DataTales Example -->
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Body</th>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Title</th>
+                                <th>Body</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in listaPosts)
+                            {
+                                <tr>
+                                    <td>@item.title</td>
+                                    <td>@item.body</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <!-- DataTales Example -->
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+}
+
+
+

@@ -1,0 +1,44 @@
+﻿
+<div class="card shadow mb-4">
+
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Datos User Agent</h6>
+    </div>
+    <div class="card-body">
+
+       
+            <div class="row">
+
+                <!--para las filas-->
+                <!--se crea la columna-->
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>User Agent:</label>
+                        <textarea class="form-control" disabled rows="3" cols="50">
+                            @ViewBag.UserAgent
+                        </textarea>
+                    </div>
+
+                    <br />
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Ip del Cliente:</label>
+                    <input type="text" class="form-control" disabled value="@ViewBag.IpAddress">
+
+                </div>
+                    <br />
+                </div>
+
+                
+            </div>
+
+
+        
+    </div>
+</div>
+
+
+
+
